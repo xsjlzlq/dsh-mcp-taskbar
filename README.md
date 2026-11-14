@@ -1,4 +1,4 @@
-# mcp-taskbar
+# dsh-mcp-taskbar
 
 把 MCP 服务器开关放进 DeepSeek Harness 的输入框工具栏。
 
@@ -23,7 +23,7 @@ Harness 里 MCP 客户端是 profile 的插件行，开/关要改配置或翻插
 | --- | --- |
 | `index.js` | Host 半边：空实现，所有操作都走 Client 的 `remote.pluginManager` |
 | `client.js` | Client 半边：chip + 浮层面板，`window.__ModuleLoader__` 模块格式 |
-| `cordis.patch.yml` | bundle patch，插入一条 `mcp-taskbar` 行 |
+| `cordis.patch.yml` | bundle patch，插入一条 `dsh-mcp-taskbar` 行 |
 | `locale/{zh,en}.json` | 插件元信息文案 |
 | `.smoke.mjs` | headless 冒烟测试：假 React + 假 Cordis ctx 渲染组件 |
 
@@ -33,7 +33,7 @@ Harness 里 MCP 客户端是 profile 的插件行，开/关要改配置或翻插
 ## 安装
 
 ```bash
-git clone <this-repo> mcp-taskbar
+git clone <this-repo> dsh-mcp-taskbar
 ```
 
 `package.json` 里 `dsh.bundle.patch` 指向 `cordis.patch.yml`，`dsh.client.immediately`

@@ -90,7 +90,7 @@ vm.runInContext(source, sandbox, { filename: 'client.js' })
 
 assert(loaded.length === 1, 'the bundle registers exactly one module factory')
 const module = loaded[0]
-assert(module.id === '@local/mcp-taskbar', 'module id is the package name')
+assert(module.id === '@local/dsh-mcp-taskbar', 'module id is the package name')
 
 const exported = module.factory((specifier) => {
   if (specifier === 'react') return React
@@ -217,8 +217,8 @@ assert(JSON.stringify(zhKeys) === JSON.stringify(enKeys), 'zh and en carry ident
 assert(styleTags.length === 1, 'the stylesheet is inserted once')
 assert(styleTags[0].textContent.includes('.mcpTB_chip'), 'the stylesheet carries the chip rule')
 
-const chipEntry = registrations.find((r) => r.options && r.options.id === 'mcp-taskbar.chip')
-const panelEntry = registrations.find((r) => r.options && r.options.id === 'mcp-taskbar.panel')
+const chipEntry = registrations.find((r) => r.options && r.options.id === 'dsh-mcp-taskbar.chip')
+const panelEntry = registrations.find((r) => r.options && r.options.id === 'dsh-mcp-taskbar.panel')
 assert(chipEntry !== undefined, 'the chip registers in conversation.input.left')
 assert(chipEntry && chipEntry.options.name === 'conversation.input.left', 'the chip slot is the composer tool row')
 assert(panelEntry !== undefined, 'the panel registers in shell.overlay')

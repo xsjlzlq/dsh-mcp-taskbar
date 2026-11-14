@@ -1,12 +1,12 @@
 window.__ModuleLoader__.load({
-  id: '@local/mcp-taskbar',
+  id: '@local/dsh-mcp-taskbar',
   factory(require) {
     const React = require('react')
     const h = React.createElement
 
     const NS = 'mcpTaskbar'
-    const CHIP_ID = 'mcp-taskbar.chip'
-    const PANEL_ID = 'mcp-taskbar.panel'
+    const CHIP_ID = 'dsh-mcp-taskbar.chip'
+    const PANEL_ID = 'dsh-mcp-taskbar.panel'
     const MCP_MODULE = '@deepseek-ai/dsh-mcp-client'
 
     const CSS = [
@@ -193,18 +193,18 @@ window.__ModuleLoader__.load({
     }
 
     function apply(ctx) {
-      ctx.effect(() => ctx.locale.register(NS, DICT), 'mcp-taskbar: dictionaries')
+      ctx.effect(() => ctx.locale.register(NS, DICT), 'dsh-mcp-taskbar: dictionaries')
       const t = ctx.locale.bind(NS)
 
       ctx.effect(() => {
         const tag = document.createElement('style')
-        tag.dataset.plugin = '@local/mcp-taskbar'
+        tag.dataset.plugin = '@local/dsh-mcp-taskbar'
         tag.textContent = CSS
         document.head.appendChild(tag)
         return () => {
           tag.remove()
         }
-      }, 'mcp-taskbar: styles')
+      }, 'dsh-mcp-taskbar: styles')
 
       const list = createStore({
         status: 'idle',
@@ -441,7 +441,7 @@ window.__ModuleLoader__.load({
         return ctx.on('connection/reset', () => {
           void refresh()
         })
-      }, 'mcp-taskbar: inventory')
+      }, 'dsh-mcp-taskbar: inventory')
     }
 
     return {
