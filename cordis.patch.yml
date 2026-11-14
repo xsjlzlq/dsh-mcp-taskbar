@@ -1,0 +1,3 @@
+- insert:
+    - id: mcp-taskbar
+      name: '@local/mcp-taskbar'

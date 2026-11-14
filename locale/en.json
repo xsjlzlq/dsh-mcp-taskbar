@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "MCP Taskbar",
+    "description": "Lists the profile's MCP client rows in the composer toolbar and opens or closes each server from there."
+  }
+}
